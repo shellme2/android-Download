@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+    <TextView
+        style="@style/HandlerItemHeader"
+        android:text="基本操作按钮"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/start_btn"
+            style="@style/HandlerItemBtn"
+            android:text="开始"/>
+
+        <Button
+            android:id="@+id/pause_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_toRightOf="@+id/start_btn"
+            android:text="暂停"/>
+
+        <Button
+            android:id="@+id/resume_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_toRightOf="@+id/pause_btn"
+            android:text="恢复"/>
+
+        <Button
+            android:id="@+id/restart_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_below="@+id/start_btn"
+            android:text="重新开始"/>
+
+        <Button
+            android:id="@+id/look_info_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_below="@+id/start_btn"
+            android:layout_toRightOf="@+id/restart_btn"
+            android:text="查看"/>
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/HandlerItemHeader"
+        android:text="动态修改网络"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <CheckBox
+            style="@style/DownloadConfigContent"
+            android:id="@+id/network_wifi_chx"
+            android:text="WIFI"
+            android:layout_centerVertical="true"
+            android:checked="true"/>
+
+        <CheckBox
+            style="@style/DownloadConfigContent"
+            android:id="@+id/network_mobile_chx"
+            android:text="Mobile"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/network_wifi_chx"/>
+
+        <CheckBox
+            style="@style/DownloadConfigContent"
+            android:id="@+id/network_bluetooth_chx"
+            android:text="Bluetooth"
+            android:layout_centerVertical="true"
+            android:checked="true"
+            android:layout_toRightOf="@id/network_mobile_chx"/>
+
+        <Button
+            android:id="@+id/edit_network_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_toRightOf="@+id/network_bluetooth_chx"
+            android:text="修改"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/HandlerItemHeader"
+        android:text="监听"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/register_listener_btn"
+            style="@style/HandlerItemBtn"
+            android:text="默认方式注册监听"/>
+
+        <Button
+            android:id="@+id/unregister_listener_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_toRightOf="@id/register_listener_btn"
+            android:text="默认方式注销监听"/>
+
+        <EditText
+            android:id="@+id/tag_etv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            android:layout_below="@+id/register_listener_btn"
+            android:hint="tag，任务注册监听可以与tag关联，注销时可以按tag注销,一个tag可以关联多个任务，按tag注销时可以将关联的所有任务监听同时注销"/>
+
+        <Button
+            android:id="@+id/register_listener_by_tag_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_below="@+id/tag_etv"
+            android:text="按tag注册监听"/>
+
+        <Button
+            android:id="@+id/unregister_listener_by_tag_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_below="@+id/tag_etv"
+            android:layout_toRightOf="@id/register_listener_btn"
+            android:text="按tag注销监听"/>
+    </RelativeLayout>
+
+    <TextView
+        style="@style/HandlerItemHeader"
+        android:text="删除"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/delete_btn"
+            style="@style/HandlerItemBtn"
+            android:text="删除"/>
+
+        <Spinner
+            android:id="@+id/delete_type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/delete_btn"/>
+
+    </RelativeLayout>
+</LinearLayout>

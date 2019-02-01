@@ -1,0 +1,62 @@
+/**统计各个埋点的出现次数**/
+select moduledetail,functionname,count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by moduledetail,functionname
+
+/**统计下载信息埋点中各个渠道的出现次数**/
+select get_json_object (extend,'$.cdnType'),count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and moduledetail='下载功能' and functionname='下载信息' 
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by get_json_object (extend,'$.cdnType')
+
+/**统计下载失败埋点的各个渠道下每种异常类型的出现次数**/
+select get_json_object (extend,'$.cdnType'),get_json_object (extend,'$.errorCode'),count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and moduledetail='下载功能' and functionname='下载失败' 
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by get_json_object (extend,'$.cdnType'),get_json_object (extend,'$.errorCode')
+
+/**统计各应用的各个埋点的出现次数**/
+select get_json_object (extend,'$.appPkg'),moduledetail,functionname,count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by get_json_object (extend,'$.appPkg'),moduledetail,functionname
+
+/**统计各个下载库版本的各个埋点的出现次数**/
+select appver,moduledetail,functionname,count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by appver,moduledetail,functionname
+
+/**统计各个下载库版本的各个渠道下每种异常类型的出现次数**/
+select appver,get_json_object (extend,'$.cdnType'),get_json_object (extend,'$.errorCode'),count(1) from oracledb.layer_bfc_download  
+where
+partdate>='date20180820' and partdate<='date20180826' 
+and modulename='bfc-download'
+and moduledetail='下载功能' and functionname='下载失败' 
+and machineid in (
+select distinct machineid from oracledb.t_bdp_prctuser_get_real
+)
+group by appver,get_json_object (extend,'$.cdnType'),get_json_object (extend,'$.errorCode')

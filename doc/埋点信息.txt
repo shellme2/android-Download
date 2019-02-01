@@ -1,0 +1,42 @@
+下载功能	下载信息
+{
+"dataPeerFromCDN":"4546560"
+"dataPeerFromXY":"49766400"
+"downFileSize":50953330
+"ip":"172.28.157.3"
+"urlHost":"down.eebbk.net"
+"appName":"下载Demo3"
+"appPkg":"com.eebbk.bfc.download.demo3"
+"appVersion":"7.0.2"
+"cdnType":"星域"
+"url":"http://down.eebbk.net/xzzc/h8/tbsx/NQKfU3e22n2QgGBisZ4PiS9l34Rk0vpC/[人教版]六年级数学下册.zip"
+}
+
+下载功能	下载失败
+{
+"errorCode":"03010044"
+"errorMsg":"socket time out when connect download url timeout"
+"appName":"下载Demo3"
+"appPkg":"com.eebbk.bfc.download.demo3"
+"appVersion":"7.0.2"
+"cdnType":"星域"
+"url":"http://down.eebbk.net/xzzc/h8/tbsx/NQKfU3e22n2QgGBisZ4PiS9l34Rk0vpC/[人教版]六年级数学下册.zip"
+}
+
+下载功能	下载成功	
+{
+"appName":"下载Demo3"
+"appPkg":"com.eebbk.bfc.download.demo3"
+"appVersion":"7.0.2"
+"cdnType":"星域"
+"url":"http://127.0.0.1:2025/down.eebbk.net/xzzc/h8/tbsx/NQKfU3e22n2QgGBisZ4PiS9l34Rk0vpC/[人教版]六年级数学下册.zip?xyop\u003ddownload"
+}
+
+下载功能	开始下载
+{
+"appName":"下载Demo3"
+"appPkg":"com.eebbk.bfc.download.demo3"
+"appVersion":"7.0.2"
+"cdnType":"星域"
+"url":"http://127.0.0.1:2034/down.eebbk.net/xzzc/h8/tbsx/NQKfU3e22n2QgGBisZ4PiS9l34Rk0vpC/[人教版]六年级数学下册.zip?xyop\u003ddownload"
+}

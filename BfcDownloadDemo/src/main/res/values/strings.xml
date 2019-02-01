@@ -1,0 +1,37 @@
+<resources>
+    <!--<string name="app_name">下载Demo</string>-->
+
+    <string-array name="delete_types_array">
+        <item>按配置删除文件</item>
+        <item>不删除文件</item>
+        <item>删除所有文件</item>
+    </string-array>
+
+    <string-array name="find_types_array">
+        <item>所有</item>
+        <item>ID</item>
+        <item>状态</item>
+        <item>扩展字段</item>
+    </string-array>
+
+    <string-array name="status_array">
+        <item>无效状态</item>
+        <item>下载等待中</item>
+        <item>下载已开始</item>
+        <item>下载已连接</item>
+        <item>下载中...</item>
+        <item>下载暂停</item>
+        <item>下载重试</item>
+        <item>下载失败</item>
+        <item>下载成功</item>
+        <item>校验已开始</item>
+        <item>校验中...</item>
+        <item>校验失败</item>
+        <item>校验成功</item>
+        <item>解压已开始</item>
+        <item>解压中...</item>
+        <item>解压失败</item>
+        <item>解压成功</item>
+    </string-array>
+    
+</resources>

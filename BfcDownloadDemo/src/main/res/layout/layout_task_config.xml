@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/HandlerItemHeader"
+        android:id="@+id/show_config_tip_tv"
+        android:layout_marginLeft="20dp"
+        android:text="配置参数"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/url_tv"
+        android:text="下载地址:"
+        android:layout_below="@+id/show_config_tip_tv"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_url_tv"
+        android:layout_width="match_parent"
+        android:layout_toRightOf="@id/url_tv"
+        android:layout_alignTop="@+id/url_tv"
+        android:gravity="left|top"
+        android:maxLines="3"
+        android:lines="3"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/id_tv"
+        android:layout_below="@id/edit_url_tv"
+        android:text="ID:"/>
+
+    <TextView
+        style="@style/DownloadConfigContent"
+        android:id="@+id/show_id_tv"
+        android:layout_below="@id/edit_url_tv"
+        android:layout_toRightOf="@id/id_tv"
+        android:layout_alignTop="@id/id_tv"
+        android:layout_alignBottom="@id/id_tv"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/file_name_tv"
+        android:layout_below="@id/id_tv"
+        android:text="文件名:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_file_name_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/id_tv"
+        android:layout_toRightOf="@id/file_name_tv"
+        android:maxLines="2"
+        android:text="null"/>
+
+    <RelativeLayout
+        android:id="@+id/file_extension_rly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/file_name_tv">
+
+        <TextView
+            style="@style/DownloadConfigHeader"
+            android:id="@+id/file_extension_tv"
+            android:text="后缀名:"
+            android:visibility="visible"/>
+
+        <EditText
+            style="@style/DownloadConfigContent"
+            android:id="@+id/edit_file_extension_etv"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@id/file_extension_tv"
+            android:text="null"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/save_path_tv"
+        android:layout_below="@id/file_extension_rly"
+        android:text="保存路径:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_save_path_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/file_extension_rly"
+        android:layout_toRightOf="@id/save_path_tv"
+        android:maxLines="2"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/preset_file_size_tv"
+        android:layout_below="@id/save_path_tv"
+        android:text="预设文件:"/>
+
+    <TextView
+        style="@style/DownloadConfigContent"
+        android:id="@+id/show_preset_file_size_tv"
+        android:layout_toRightOf="@id/preset_file_size_tv"
+        android:layout_alignTop="@id/preset_file_size_tv"
+        android:layout_alignBottom="@id/preset_file_size_tv"
+        android:layout_below="@id/save_path_tv"
+        android:text=" - - "/>
+
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/auto_check_size_tv"
+        android:layout_below="@id/preset_file_size_tv"
+        android:text="自动检测预设文件大小:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_auto_check_size_chx"
+        android:layout_below="@id/preset_file_size_tv"
+        android:layout_toRightOf="@id/auto_check_size_tv"
+        android:layout_alignTop="@+id/auto_check_size_tv"
+        android:layout_alignBottom="@+id/auto_check_size_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/priority_tv"
+        android:layout_below="@id/auto_check_size_tv"
+        android:text="优先级:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_priority_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/auto_check_size_tv"
+        android:layout_toRightOf="@id/priority_tv"
+        android:maxLines="2"
+        android:text="0"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/check_type_tv"
+        android:layout_below="@id/priority_tv"
+        android:text="校验类型:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_check_type_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/priority_tv"
+        android:layout_toRightOf="@id/check_type_tv"
+        android:maxLines="2"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/check_code_tv"
+        android:layout_below="@id/check_type_tv"
+        android:text="校验码:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_check_code_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/check_type_tv"
+        android:layout_toRightOf="@id/check_code_tv"
+        android:maxLines="2"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/check_enable_tv"
+        android:layout_below="@id/check_code_tv"
+        android:text="自动校验:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_check_enable_size_chx"
+        android:layout_below="@id/edit_check_code_etv"
+        android:layout_toRightOf="@id/check_enable_tv"
+        android:layout_alignTop="@+id/check_enable_tv"
+        android:layout_alignBottom="@+id/check_enable_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/network_type_tv"
+        android:layout_below="@id/check_enable_tv"
+        android:text="网络类型:"/>
+
+    <TextView
+        style="@style/DownloadConfigContent"
+        android:id="@+id/show_network_type_size_tv"
+        android:layout_toRightOf="@id/network_type_tv"
+        android:layout_alignTop="@id/network_type_tv"
+        android:layout_alignBottom="@id/network_type_tv"
+        android:layout_below="@id/check_enable_tv"
+        android:text=" - - "
+        android:visibility="gone"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/network_wifi_chx"
+        android:text="WIFI"
+        android:checked="true"
+        android:layout_below="@id/show_network_type_size_tv"
+        android:layout_toRightOf="@id/show_network_type_size_tv"
+        android:layout_alignTop="@+id/network_type_tv"
+        android:layout_alignBottom="@+id/network_type_tv"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/network_mobile_chx"
+        android:text="Mobile"
+        android:layout_below="@id/network_wifi_chx"
+        android:layout_toRightOf="@id/network_wifi_chx"
+        android:layout_alignTop="@+id/network_type_tv"
+        android:layout_alignBottom="@+id/network_type_tv"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/network_bluetooth_chx"
+        android:text="Bluetooth"
+        android:checked="true"
+        android:layout_below="@id/network_mobile_chx"
+        android:layout_toRightOf="@id/network_mobile_chx"
+        android:layout_alignTop="@+id/network_type_tv"
+        android:layout_alignBottom="@+id/network_type_tv"/>
+
+    <RelativeLayout
+        android:id="@+id/need_queue_rly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/network_mobile_chx">
+
+        <TextView
+            style="@style/DownloadConfigHeader"
+            android:id="@+id/need_queue_tv"
+            android:text="需要排队:"/>
+
+        <CheckBox
+            style="@style/DownloadConfigContent"
+            android:id="@+id/edit_need_queue_chx"
+            android:layout_toRightOf="@id/need_queue_tv"
+            android:layout_alignTop="@+id/need_queue_tv"
+            android:layout_alignBottom="@+id/need_queue_tv"
+            android:checked="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/reserver_tv"
+        android:layout_below="@id/need_queue_rly"
+        android:text="保留字段:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_reserver_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/need_queue_rly"
+        android:layout_toRightOf="@id/reserver_tv"
+        android:maxLines="2"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/extras_tv"
+        android:layout_below="@id/reserver_tv"
+        android:text="扩展字段:"/>
+
+    <TextView
+        android:id="@+id/extras_add_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/reserver_tv"
+        android:layout_toRightOf="@id/extras_tv"
+        android:text="点击添加扩展+"/>
+
+    <LinearLayout
+        android:id="@+id/show_extras_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/extras_tv"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/notification_tv"
+        android:layout_below="@id/show_extras_ly"
+        android:text="通知类型:"/>
+
+    <TextView
+        style="@style/DownloadConfigContent"
+        android:id="@+id/show_notification_tv"
+        android:layout_toRightOf="@id/notification_tv"
+        android:layout_alignTop="@id/notification_tv"
+        android:layout_alignBottom="@id/notification_tv"
+        android:layout_below="@id/extras_tv"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/allow_adjust_save_path_tv"
+        android:layout_below="@id/notification_tv"
+        android:text="允许修改保存路径:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_allow_adjust_save_path_chx"
+        android:layout_below="@id/notification_tv"
+        android:layout_toRightOf="@id/allow_adjust_save_path_tv"
+        android:layout_alignTop="@+id/allow_adjust_save_path_tv"
+        android:layout_alignBottom="@+id/allow_adjust_save_path_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/min_progress_time_tv"
+        android:layout_below="@id/allow_adjust_save_path_tv"
+        android:text="进度回调间隔时间:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/min_progress_time_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/allow_adjust_save_path_tv"
+        android:layout_toRightOf="@id/min_progress_time_tv"
+        android:maxLines="1"
+        android:text=""
+        android:hint="输入=0实时回调，&gt;0按设置时间间隔回调,&lt;0不回调，"
+        android:textSize="10sp"
+        android:inputType="number"
+        android:digits="-0123456789"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/show_real_time_info_tv"
+        android:layout_below="@id/min_progress_time_tv"
+        android:text="显示速度和剩余时间:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_show_real_time_info_chx"
+        android:layout_below="@id/min_progress_time_tv"
+        android:layout_toRightOf="@id/show_real_time_info_tv"
+        android:layout_alignTop="@+id/show_real_time_info_tv"
+        android:layout_alignBottom="@+id/show_real_time_info_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/auto_unpack_tv"
+        android:layout_below="@id/show_real_time_info_tv"
+        android:text="自动解压:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_auto_unpack_chx"
+        android:layout_below="@id/show_real_time_info_tv"
+        android:layout_toRightOf="@id/auto_unpack_tv"
+        android:layout_alignTop="@+id/auto_unpack_tv"
+        android:layout_alignBottom="@+id/auto_unpack_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/unpack_path_tv"
+        android:layout_below="@id/auto_unpack_tv"
+        android:text="解压存储路径:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_unpack_path_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/auto_unpack_tv"
+        android:layout_toRightOf="@id/unpack_path_tv"
+        android:maxLines="2"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/delete_source_after_unpack_tv"
+        android:layout_below="@id/unpack_path_tv"
+        android:text="删除源文件（解压后）:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_delete_source_after_unpack_chx"
+        android:layout_below="@id/unpack_path_tv"
+        android:layout_toRightOf="@id/delete_source_after_unpack_tv"
+        android:layout_alignTop="@+id/delete_source_after_unpack_tv"
+        android:layout_alignBottom="@+id/delete_source_after_unpack_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/delete_no_end_task_tv"
+        android:layout_below="@id/delete_source_after_unpack_tv"
+        android:text="删除时删除缓存（未完成）:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_delete_no_end_task_chx"
+        android:layout_below="@id/delete_source_after_unpack_tv"
+        android:layout_toRightOf="@id/delete_no_end_task_tv"
+        android:layout_alignTop="@+id/delete_no_end_task_tv"
+        android:layout_alignBottom="@+id/delete_no_end_task_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/delete_end_task_tv"
+        android:layout_below="@id/delete_no_end_task_tv"
+        android:text="删除时删除文件（已完成）:"/>
+
+    <CheckBox
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_delete_end_task_chx"
+        android:layout_below="@id/delete_no_end_task_tv"
+        android:layout_toRightOf="@id/delete_end_task_tv"
+        android:layout_alignTop="@+id/delete_end_task_tv"
+        android:layout_alignBottom="@+id/delete_end_task_tv"
+        android:checked="true"/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/download_threads_tv"
+        android:layout_below="@id/delete_end_task_tv"
+        android:text="子线程数量（多线程下载）:"/>
+
+    <TextView
+        style="@style/DownloadConfigContent"
+        android:id="@+id/show_download_threads_tv"
+        android:layout_toRightOf="@id/download_threads_tv"
+        android:layout_alignTop="@id/download_threads_tv"
+        android:layout_alignBottom="@id/download_threads_tv"
+        android:layout_below="@id/delete_end_task_tv"
+        android:text=" - - "/>
+
+    <TextView
+        style="@style/DownloadConfigHeader"
+        android:id="@+id/module_name_tv"
+        android:layout_below="@id/download_threads_tv"
+        android:text="模块名:"/>
+
+    <EditText
+        style="@style/DownloadConfigContent"
+        android:id="@+id/edit_module_name_etv"
+        android:layout_width="match_parent"
+        android:layout_below="@id/download_threads_tv"
+        android:layout_toRightOf="@id/module_name_tv"
+        android:maxLines="2"
+        android:hint="使用默认模块名称"
+        android:text=""/>
+
+</RelativeLayout>

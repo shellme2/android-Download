@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion bfcBuildConfig.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    lintOptions {
+        abortOnError false
+    }
+
+    signingConfigs {
+        release {
+            keyAlias bfcBuildConfig.signing["keyAlias"]
+            keyPassword bfcBuildConfig.signing["keyPassword"]
+            storeFile file('keystore.jks')
+            storePassword bfcBuildConfig.signing["storePassword"]
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.eebbk.bfc.download.demo"
+        minSdkVersion bfcBuildConfig.minSdkVersion
+        targetSdkVersion bfcBuildConfig.targetSdkVersion
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        resValue "string", "app_name", "下载Demo"
+    }
+
+    buildTypes {
+        release {
+            zipAlignEnabled true
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+//     productFlavors {
+//         downloadDemo1 {
+//             applicationId 'com.eebbk.bfc.download.demo1'
+//             resValue "string", "app_name", "下载Demo1"
+//         }
+//         downloadDemo2 {
+//             applicationId 'com.eebbk.bfc.download.demo2'
+//             resValue "string", "app_name", "下载Demo2"
+//         }
+//         downloadDemo3 {
+//             applicationId 'com.eebbk.bfc.download.demo3'
+//             resValue "string", "app_name", "下载Demo3"
+//         }
+//     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    compile rootProject.ext.dependencies."appcompat-v7"
+    compile bfcBuildConfig.deps."bfc-common"
+    compile bfcBuildConfig.deps.'bfc-behavior'
+
+//    compile bfcBuildConfig.deps."bfc-download"
+//    compile 'com.eebbk.bfc:bfc-download:5.0.72-bugfix'
+    compile project(':BfcDownloadSdk')
+
+    compile bfcBuildConfig.deps."bfc-leakcanary"
+    compile bfcBuildConfig.deps."bfc-blockcanary"
+
+    testCompile 'junit:junit:4.12'
+}

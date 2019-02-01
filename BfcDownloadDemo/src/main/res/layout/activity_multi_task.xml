@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/show_config_panel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:text="全局配置"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/handler_panel_ly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/panel_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/pause_all_task_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="暂停所有" />
+
+                <Button
+                    android:id="@+id/resume_all_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="恢复所有" />
+
+                <Button
+                    android:id="@+id/delete_all_task_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="删除所有"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/restart_all_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="重下所有" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_task_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="添加任务" />
+
+                <Button
+                    android:id="@+id/register_operation_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="注册操作监听" />
+
+                <Button
+                    android:id="@+id/unregister_operation_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="注销操作监听" />
+
+                <Button
+                    android:id="@+id/seach_btn"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="查找任务" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/clear_download_info"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="清除批量下载信息" />
+
+                <Button
+                    android:id="@+id/show_download_info"
+                    style="@style/HandlerItemBtn"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="查看批量下载信息" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/handler_panel_ly"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/task_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="任务列表" />
+
+            <ListView
+                android:id="@+id/tasks_list_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/empty_view"
+        layout="@layout/layout_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/add_task_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/panel_bg"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/add_single_task_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="match_parent"
+            android:text="添加单个自定义任务" />
+
+        <EditText
+            android:id="@+id/need_queue_module_name_etv"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="所属模块名，不填按默认"
+            android:lines="1"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/add_ch_tasks_need_queue_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加同步语文（约100个）排队任务" />
+
+        <Button
+            android:id="@+id/add_math_tasks_need_queue_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加同步数学（约100个）排队任务" />
+
+        <Button
+            android:id="@+id/add_en_tasks_need_queue_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加同步英语（约120个）排队任务" />
+
+        <Button
+            android:id="@+id/add_https_tasks_need_queue_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加https（150个）排队任务" />
+
+        <Button
+            android:id="@+id/add_http_single_task_big"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加http单任务_大文件" />
+
+        <Button
+            android:id="@+id/add_http_single_task_middle"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加http单任务_中等文件" />
+
+        <Button
+            android:id="@+id/add_http_single_task_small"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加http单任务_小文件" />
+
+        <Button
+            android:id="@+id/add_https_single_task_big"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加https单任务_大文件" />
+
+        <Button
+            android:id="@+id/add_https_single_task_middle"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加https单任务_中等文件" />
+
+        <Button
+            android:id="@+id/add_https_single_task_small"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="添加https单任务_小文件" />
+
+        <TextView
+            android:id="@+id/add_tasks_need_queue_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排队的任务依次执行，一个完成，下一个开始，每次执行一个任务"
+            android:textSize="10sp" />
+
+        <EditText
+            android:id="@+id/no_queue_module_name_etv"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="所属模块名，不填按默认"
+            android:lines="1"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20px" />
+
+        <Button
+            android:id="@+id/add_tasks_no_queue_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="wrap_content"
+            android:text="添加10个不排队任务"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/add_tasks_no_queue_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="不排队任务添加立马执行，不需等待，不过有最大数限制，现为5个，超过最大限数还是需要等待"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/cancel_add_panel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/add_config_panel_ly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/panel_bg"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/layout_task_config" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="取消" />
+
+            <Button
+                android:id="@+id/ok_add_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="确定" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/search_panel_layout"
+        layout="@layout/layout_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</FrameLayout>

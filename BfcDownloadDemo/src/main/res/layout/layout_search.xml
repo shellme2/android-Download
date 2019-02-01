@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusableInTouchMode="true"
+                android:clickable="true"
+                android:padding="10dp"
+                android:background="@color/panel_bg">
+
+    <LinearLayout
+        android:id="@+id/operation_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="取消"/>
+
+        <Button
+            android:id="@+id/find_btn"
+            style="@style/HandlerItemBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="查找"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/operation_ly">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/search_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="查找任务"/>
+
+            <TextView
+                android:id="@+id/find_tip_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search_title_tv"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="查询条件，按："/>
+
+            <EditText
+                android:id="@+id/module_name_etv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/find_tip_tv"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:hint="输入模块名，不填按默认"
+                android:text=""/>
+
+            <Spinner
+                android:id="@+id/find_type_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/module_name_etv"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/find_type_spinner">
+
+                <EditText
+                    android:id="@+id/find_edit_id_etv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:text=""
+                    android:hint="请输入任务ID"
+                    android:visibility="gone"/>
+
+                <Spinner
+                    android:id="@+id/find_status_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="top|center"
+                    android:visibility="visible"/>
+
+                <RelativeLayout
+                    android:id="@+id/extras_rly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/find_extras_add_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="添加扩展字段+"/>
+
+                    <LinearLayout
+                        android:id="@+id/find_extras_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/find_extras_add_btn"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

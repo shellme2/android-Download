@@ -1,0 +1,11 @@
+http://172.28.1.140:7090/book/YunBi-BiHua-book_03.zip
+http://172.28.1.140:7090/book/YunBi-PinYin-book_01.zip
+http://172.28.1.140:7090/book/YunBi-PinYin-book_02.zip
+http://172.28.1.140:7090/book/YunBi-ShuZi-book_04.zip
+http://172.28.1.140:7090/enolawordcard/DH_Friday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Monday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Saturday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Sunday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Thursday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Tuesday.mp4
+http://172.28.1.140:7090/enolawordcard/DH_Wednesday.mp4

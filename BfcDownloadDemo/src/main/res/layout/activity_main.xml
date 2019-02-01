@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/basic_function_test_btn"
+        android:text="基本功能测试"/>
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/safe_test_btn"
+        android:text="安全测试"
+        android:layout_below="@id/basic_function_test_btn"/>
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/net_test_btn"
+        android:text="网络测试"
+        android:layout_below="@id/safe_test_btn"/>
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/performance_test_btn"
+        android:text="性能测试"
+        android:layout_below="@id/net_test_btn"/>
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/limit_test_btn"
+        android:text="极限测试"
+        android:layout_below="@id/performance_test_btn"/>
+
+    <Button
+        style="@style/MainActivityItem"
+        android:id="@+id/other_test_btn"
+        android:text="其他测试"
+        android:layout_below="@id/limit_test_btn"/>
+
+
+</RelativeLayout>

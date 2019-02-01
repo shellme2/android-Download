@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/download_pic"
+        android:layout_width="@dimen/item_width"
+        android:layout_height="@dimen/item_width"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/download_linearmid"
+        android:layout_alignBottom="@+id/download_linearmid"
+        android:contentDescription="download img"
+        android:src="@drawable/item" />
+
+    <LinearLayout
+        android:id="@+id/download_linearmid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/download_pic"
+        android:orientation="vertical" >
+
+        <ProgressBar
+            android:id="@+id/download_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/download_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/item_textspeed_size"
+                android:layout_alignParentRight="true"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/download_filename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textSize="@dimen/item_textname_size"
+                android:layout_toLeftOf="@id/download_speed"
+                android:layout_alignWithParentIfMissing="true"
+                android:text=""/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/first_handler_bar_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/download_linearmid"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/download_state"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/item_textname_size" />
+
+        <Button
+            android:id="@+id/download_delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="删除(按配置)"
+            android:textSize="@dimen/item_textname_size" />
+
+        <Button
+            android:id="@+id/download_show"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="查看"
+            android:textSize="@dimen/item_textname_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/first_handler_bar_ly"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/download_delete_all"
+            android:layout_width="0dp"
+            android:layout_weight="1.2"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="删除(删所有文件)"
+            android:textSize="@dimen/item_textname_size" />
+
+        <Button
+            android:id="@+id/download_delete_no_file"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="删除(保留文件)"
+            android:textSize="@dimen/item_textname_size" />
+
+        <Button
+            android:id="@+id/bt_network_mobile"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="+移动网络"
+            android:textSize="@dimen/item_textname_size" />
+    </LinearLayout>
+
+</RelativeLayout>
